@@ -11,7 +11,7 @@ spring:
           uri: 'https://github.com/edersonjseder/ead-config-server-repo'
           default-label: main
           username: edersonjseder
-          password: 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
+          password: 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
   #Datasource
   datasource:
     url: "jdbc:postgresql://localhost:5432/ead-config-server?currentSchema=sc_config_server&autoreconnect=true"

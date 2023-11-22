@@ -34,9 +34,9 @@ encrypt:
 
 ead:
   config-server:
-    username: ${CONFIG_SERVER_USERNAME}
-    password: ${CONFIG_SERVER_PASSWORD}
-    authority: ${CONFIG_SERVER_AUTHORITY}
+    username: ${CONFIG_SERVER_USERNAME_PROD}
+    password: ${CONFIG_SERVER_PASSWORD_PROD}
+    authority: ${CONFIG_SERVER_AUTHORITY_PROD}
 
 eureka:
   client:
