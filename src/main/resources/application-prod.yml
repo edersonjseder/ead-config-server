@@ -12,20 +12,22 @@ spring:
           default-label: main
           username: ${GIT_USERNAME}
           password: ${GIT_PASSWORD}
-  h2:
-    console:
-      enabled: true
-      path: /h2-ui
+  #Datasource
   datasource:
-    url: jdbc:h2:file:./mydb
-    username: ${DB_IN_MEMORY_USERNAME}
-    password: ${DB_IN_MEMORY_PASSWORD}
-    driverClassName: org.h2.Driver
+    url: ${DATABASE_URL}
+    username: ${DB_USERNAME_PROD}
+    password: ${DB_PASSWORD_PROD}
+    driver-class-name: org.postgresql.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob:
+          non-contextual-creation: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 encrypt:
   key: 855bf60361dd70d1bf20eeea92328b14299cad3b8df207c42ed3506f0767a7dcc45af81bc2163dd8a56d480da1c51ac98f50ec4aa0fdf5590b1daf923d792406
